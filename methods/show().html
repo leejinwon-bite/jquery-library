@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <script src="https://code.jquery.com/jquery-3.7.1.js" integrity="sha256-eKhayi8LEQwp4NKxN+CfCh+3qOVUtJn3QNZ0TciWLP4=" crossorigin="anonymous"></script>
+    <script>
+        $(document).ready(function(){
+            $('#show').click(function(){
+                $("p").show();
+            });
+            $('#hide').click(function(){
+                $("p").hide();
+            });
+        });
+    </script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <p>if you click on the "show" button, i will show</p>
+    <p>if you click on the "hide" button, i will disappear</p>
+    <button id="hide">hide</button>
+    <button id="show">show</button>
+
+</body>
+</html>
