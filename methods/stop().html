@@ -1,0 +1,46 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>stop demo</title>
+  <style>
+  div {
+    position: absolute;
+    background-color: hotpink;
+    left: 300px;
+    top: 300px;
+    width: 100px;
+    height: 60px;
+    margin: 5px;
+  }
+  </style>
+  <script src="https://code.jquery.com/jquery-3.7.1.js"></script>
+</head>
+<body>
+ 
+<button id="go">Go</button>
+<button id="stop">STOP!</button>
+<button id="back">Back</button>
+<div class="block"></div>
+ 
+<script>
+// Start animation
+$( "#go" ).on( "click", function() {
+    // +=누적 시킨다는 말임 왼쪽공간을 빈곳으로 해서 300px씩 누적시키면서 오른쪽으로 이동
+  $( ".block" ).animate({ left: "+=300px" }, 2000 );
+});
+ 
+// Stop animation when button is clicked
+$( "#stop" ).on( "click", function() {
+  $( ".block" ).stop();
+});
+ 
+// Start animation in the opposite direction
+ // -=누적 시킨다는 말임 오른쪽 공간을 빈곳으로 해서 300px씩 누적시키면서 왼쪽으로 이동
+$( "#back" ).on( "click", function() {
+  $( ".block" ).animate({ left: "-=300px" }, 2000 );
+});
+</script>
+ 
+</body>
+</html>
