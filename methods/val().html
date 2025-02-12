@@ -1,0 +1,35 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>val demo</title>
+  <style>
+  button {
+    margin: 4px;
+    cursor: pointer;
+  }
+  input {
+    margin: 4px;
+    color: blue;
+  }
+  </style>
+  <script src="https://code.jquery.com/jquery-3.7.1.js"></script>
+</head>
+<body>
+ 
+<div>
+  <button>Feed</button>
+  <button>the</button>
+  <button>Input</button>
+</div>
+<input type="text" value="click a button">
+ 
+<script>
+$( "button" ).on( "click", function() {
+  var text = $( this ).text();  //$( this ).text();는 누르는 버튼 요소의 택스트가 됨. Feed,the,Input.
+  $( "input" ).val( text ); // input 태그의 value 속성값 click a button 을 text 변수로 바꿈. 
+});
+</script>
+ 
+</body>
+</html>
