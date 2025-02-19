@@ -1,0 +1,32 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>append demo</title>
+  <style>
+  p {
+    background: yellow;
+  }
+  </style>
+  <script src="https://code.jquery.com/jquery-3.7.1.js"></script>
+</head>
+<body>
+
+<h1>Hello world!!!</h1>
+ 
+<p>I would like to say: </p>
+<p>I would like to say: </p>
+<p>I would like to say: </p>
+ 
+<script>
+// append()는 앞의 선택자 바로 오른쪽 옆에 새로운 태그를 집어넣는 기능을 가진 애다. 
+// 혹은 이미 <body>에 적혀있는 요소를 멀리 떨어져 있어도 바로 아래쪽에 붙여 버린다.   
+$( "p" ).eq(0).append( "<strong>Hello</strong>" );
+$( "p" ).eq(1).append( "hi" );
+$("p").eq(2).append($("h1"));
+
+
+</script>
+ 
+</body>
+</html>
