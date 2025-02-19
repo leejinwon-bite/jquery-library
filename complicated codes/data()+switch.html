@@ -1,0 +1,74 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>data demo</title>
+  <style>
+  div {
+    margin: 5px;
+    background: yellow;
+  }
+  button {
+    margin: 5px;
+    font-size: 14px;
+  }
+  p {
+    margin: 5px;
+    color: blue;
+  }
+  span {
+    color: red;
+  }
+  </style>
+  <script src="https://code.jquery.com/jquery-3.7.1.js"></script>
+</head>
+<body>
+ 
+<div>A div</div>
+<button>Get "blah" from the div</button>
+<button>Set "blah" to "hello"</button>
+<button>Set "blah" to 86</button>
+<button>Remove "blah" from the div</button>
+<p>The "blah" value of this div is <span>?</span></p>
+ 
+<script>
+$( "button" ).on( "click", function() {
+  
+  var value;
+ 
+//   this는 button 태그중에 누르는 1개의 요소를 말함.
+  switch ( $( "button" ).index( this ) ) {
+    // case의 숫자는 button 태그를 위에서부터 아래로 0부터 시작하여 3까지 번호를 매긴것임. 
+    // 아마 $( "button" )는 태그가 여러개일때 배열로서 담는 것 같음.
+    case 0 :
+    // <div> 에는 blah라는 이름의 data가 담긴다. 아직 blah data에는 아무 값도 없음. 밑에 case에 의해서 blah가 새로운 값을 가질경우에는 <span>에 출력됨.
+      value = $( "div" ).data( "blah" );
+    // index()는 $( "button" )이 가지고 있는 배열의 배열 주소를 반환하는 함수임. 그래서 콘솔에  case 0 :인 경우엔 0이 콘솔에 출력됨.
+      console.log($( "button" ).index( this ));
+      break;
+    case 1 :
+    // 2번째 button 태그를 누른경우 $( "button" ).index( this ) = case 1 :이 되는데, <div>엔 blah라는 이름의 data가 담기고, blah는 "hello"라는 문자열을 담음.
+      $( "div" ).data( "blah", "hello" );
+    //   value는 stored!라는 값을 가져서  $( "span" ).text( "" + value );로 Stored!가 span태그에 출력됨. 
+    // 이건 위에 $( "div" ).data( "blah", "hello" ); 코드하고는 상관없이, 걍 value 값을 준거암. 그냥 2번째 button누르면 나오는 애임.
+      value = "Stored!";
+      console.log($( "button" ).index( this ));
+      break;
+    case 2 :
+      $( "div" ).data( "blah", 86 );
+      value = "Stored!";
+      console.log($( "button" ).index( this ));
+      break;
+    case 3 :
+      $( "div" ).removeData( "blah" );
+      value = "Removed!";
+      console.log($( "button" ).index( this ));
+      break;
+  }
+ 
+  $( "span" ).text( "" + value );
+});
+</script>
+ 
+</body>
+</html>

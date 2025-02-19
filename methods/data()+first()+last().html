@@ -1,0 +1,35 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>data demo</title>
+  <style>
+  div {
+    color: blue;
+  }
+  span {
+    color: red;
+  }
+  </style>
+  <script src="https://code.jquery.com/jquery-3.7.1.js"></script>
+</head>
+<body>
+ 
+<div>
+  The values stored were
+  <span></span>
+  and
+  <span></span>
+</div>
+ 
+<script>
+    // div태그에는 test라는 이름의 data가 들어있음. test안에는 json배열이 들어있음.
+$( "div" ).data( "test", { first: 16, last: "pizza!" } );
+// first()는 태그의 위에서 첫번째를 가리키는 함수. $( "div" ).data( "test" ).first 위에있는 json의 value를 가져오는 code.
+$( "span" ).first().text( $( "div" ).data( "test" ).first );
+// last()는 태그의 위에서 맨아래 마지막 태그를 가리키는 함수. $( "div" ).data( "test" ).last 맨위에 있는 json의 value를 가져오는 code.
+$( "span" ).last().text( $( "div" ).data( "test" ).last );
+</script>
+ 
+</body>
+</html>

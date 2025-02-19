@@ -1,0 +1,47 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>removeData demo</title>
+  <style>
+  div {
+    margin: 2px;
+    color: blue;
+  }
+  span {
+    color: red;
+  }
+  </style>
+  <script src="https://code.jquery.com/jquery-3.7.1.js"></script>
+</head>
+<body>
+ 
+<div>value1 before creation: <span></span></div>
+<div>value1 after creation: <span></span></div>
+<div>value1 after removal: <span></span></div>
+<div>value2 after removal: <span></span></div>
+<div>value1 after removal2: <span></span></div>
+ 
+<!-- 아래 코드들은 이벤트 객체가 없어서 항상 출력값이 일정하다. 위에서 아래로 실행되는 순서에 맞춰서 결과가 결정됨. -->
+<script>
+// 첫번째 문단에서의 <span>에는 "" + $( "div" ).data( "test1" ) 얘가 View page에 보이는데, 아직 test1이라는 data엔 아무 값도 없어서, 초기값 null이 반환됨.
+// 하지만 앞의 ""는 undefined를 반환시킴.
+$( "span" ).eq( 0 ).text(""+$( "div" ).data( "test1" ) );
+// 밑에 코드는 view page에 바로 보이는게 아니고 그냥 test1이라는 data에 "VALUE-1"이라는 문자열만 저장.
+$( "div" ).data( "test1", "VALUE-1" );
+// 밑에 코드는 view page에 바로 보이는게 아니고 그냥 test2이라는 data에 "VALUE-2"이라는 문자열만 저장.
+// 이러면서 <div> 에는 총 2가지의 data가 담기게 됨. 그건 test1, test2라는 data 들이다.
+$( "div" ).data( "test2", "VALUE-2" );
+// eq( 1 )는 두번째 <span> 을 가리킨다. switch-case문의 case랑 똑같은 기능을 함. $( "span" )는 <span>이 여러개일때 배열로 담아버림. querySelectorAll과 같음.
+$( "span" ).eq( 1 ).text( "" + $( "div").data( "test1" ) );
+// <div>가 가진 2가지의 data 중에 test1을 삭제 시키는 코드임.
+$( "div" ).removeData( "test1" );
+// 3번째 <span>에는 위에 코드로 이미 data test1이 삭제되어 없어져서 undefined가 나옴.
+$( "span" ).eq( 2 ).text( "" + $( "div" ).data( "test1" ) );
+$( "span" ).eq( 3 ).text( "" + $( "div" ).data( "test2" ) );
+// test1이라는 data엔 아무 값도 없어서, 초기값 null이 반환됨. 하지만 앞의 ""가 없어서 null을 반환시킴. 아무값도 없는거 말함.
+$( "span" ).eq( 4 ).text($( "div" ).data( "test1" ) );
+</script>
+ 
+</body>
+</html>
