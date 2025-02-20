@@ -1,0 +1,45 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>html demo</title>
+  <style>
+  p {
+    margin: 8px;
+    font-size: 20px;
+    color: blue;
+    cursor: pointer;
+  }
+  b {
+    text-decoration: underline;
+  }
+  button {
+    cursor: pointer;
+  }
+  </style>
+  <script src="https://code.jquery.com/jquery-3.7.1.js"></script>
+</head>
+<body>
+ 
+<p>
+  <b>Click</b> to change the <span id="tag">html</span>
+</p>
+<p>
+  to a <strong><span id="text">text</span></strong> node.
+</p>
+<p>
+  This <button name="nada">button</button> does nothing.
+</p>
+ 
+<script>
+$( "p" ).on( "click", function() {
+    // html() 은 event.target을 제외한 요소들의 코드내용을 가지고 있다.
+    // html()은 매게에 event.result같은건 되고, 그냥 바로 문자열을 넣으면 에러뜨고 안됨. 존나 이상함.
+  var htmlString = $( this ).html();
+  console.log(htmlString);
+  $( this ).text( htmlString );
+});
+</script>
+ 
+</body>
+</html>

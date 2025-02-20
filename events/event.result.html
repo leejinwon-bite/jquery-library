@@ -1,0 +1,23 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>event.result demo</title>
+  <script src="https://code.jquery.com/jquery-3.7.1.js"></script>
+</head>
+<body>
+ 
+<button>display event.result</button>
+<p></p>
+ 
+<script>
+$( "button" ).on( "click", function( event ) {
+  return "<h1>hi 이거왜 안되고 잇엇지?</h1>";
+});
+$( "button" ).on( "click", function( event ) {
+  $( "p" ).html( event.result );
+});
+</script>
+ 
+</body>
+</html>

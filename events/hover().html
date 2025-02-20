@@ -1,0 +1,41 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>hover demo</title>
+  <style>
+  ul {
+    margin-left: 20px;
+    color: blue;
+  }
+  li {
+    cursor: default;
+  }
+  span {
+    color: red;
+  }
+  </style>
+  <script src="https://code.jquery.com/jquery-3.7.1.js"></script>
+</head>
+<body>
+ 
+<ul>
+  <li>Milk</li>
+  <li>Bread</li>
+  <li>Chips</li>
+  <li>Socks</li>
+</ul>
+ 
+<script>
+$( "li" ).hover(
+  function() {
+    $( this ).append( $( "<span> ***</span>" ) );
+  }, function() {
+    $( this ).find( "span" ).last().remove();
+  }
+);
+ 
+</script>
+ 
+</body>
+</html>
