@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>e, event는 각각 vanila, jquery에서 쓰이는 차이점이 있음.</title>
+    <style>
+        p {
+            width: 100px;
+        }
+    </style>
+</head>
+<body>
+
+    <button><p>클릭!</p></button>
+
+    <script>
+        const click = document.querySelector("p")
+
+        click.addEventListener("click", function(e) {
+
+            alert("hi")
+            console.log(e)
+        })
+    </script>
+    
+</body>
+</html>
