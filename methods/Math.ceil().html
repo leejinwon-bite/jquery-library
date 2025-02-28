@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://code.jquery.com/jquery-3.7.1.js" integrity="sha256-eKhayi8LEQwp4NKxN+CfCh+3qOVUtJn3QNZ0TciWLP4=" crossorigin="anonymous"></script>
+</head>
+
+
+    <h1>Math.ceil()이란?</h1>
+    <label for="test">소수점, 정수등 입력 하면 Math.ceil()값 나옴.</label>
+    <input type="text" id="test"><button>click</button>
+    <p>정수로 변환. 소수점 반올림하여 주어진 숫자보다 크게 부풀리는 놈임. Math.ceil(<strong></strong>) = <span></span></p>
+    <p>소수점 자리에 0이 오면 그냥 정수만 return됨</p>
+
+    <script>
+        $(document).ready(function() {
+
+            $("button").click(function() {
+
+                let n = $("input").val();
+
+                    if(n != null) {
+
+                    $("span").text(Math.ceil(n));
+                    $("strong").text(n);
+                };
+            });
+        });
+        
+    </script>
+    
+</body>
+</html>

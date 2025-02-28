@@ -40,6 +40,7 @@ $( "button" ).on( "click", function() {
   switch ( $( "button" ).index( this ) ) {
     // case의 숫자는 button 태그를 위에서부터 아래로 0부터 시작하여 3까지 번호를 매긴것임. 
     // 아마 $( "button" )는 태그가 여러개일때 배열로서 담는 것 같음.
+    // index()는 배열 숫자를 반환.
     case 0 :
     // <div> 에는 blah라는 이름의 data가 담긴다. 아직 blah data에는 아무 값도 없음. 밑에 case에 의해서 blah가 새로운 값을 가질경우에는 <span>에 출력됨.
       value = $( "div" ).data( "blah" );
@@ -66,7 +67,7 @@ $( "button" ).on( "click", function() {
       break;
   }
  
-  $( "span" ).text( "" + value );
+  $( "span" ).text( value );
 });
 </script>
  
