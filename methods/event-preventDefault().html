@@ -11,6 +11,7 @@
 <a class="e" href="https://jquery.com">default click action is prevented</a><br><br><br><br><br>
 <div id="log"></div>
 <a class="r" href="https://jquery.com">default click action isn't prevented</a>
+<div id="log2"></div>
 
  
 <script>
@@ -21,10 +22,10 @@ $( "a.e" ).on( "click", function( event ) {
     .appendTo( "#log" );
 });
 
-$( "a.e" ).on( "click", function( event ) {
+$( "a.r" ).on( "click", function( event ) {
   $( "<div>" )
     .append( "default " + event.type + " prevented" )
-    .appendTo( "#log" );
+    .appendTo( "#log2" );
 });
 </script>
  
