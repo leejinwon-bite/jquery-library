@@ -1,0 +1,25 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>eq demo</title>
+  <script src="https://code.jquery.com/jquery-3.7.1.js"></script>
+</head>
+<body>
+
+    <h1>: 콜론은 선택자들의 배열을 의미함. </h1>
+ 
+<table border="1">
+  <tr><td>TD #0</td><td>TD #1</td><td>TD #2</td></tr>
+  <tr><td>TD #3</td><td>TD #4</td><td>TD #5</td></tr>
+  <tr><td>TD #6</td><td>TD #7</td><td>TD #8</td></tr>
+</table>
+ 
+<script>
+    // : 콜론은 선택자들의 배열을 의미함. 
+$( "td:eq( 2 )" ).css( "color", "red" );
+$( "td:eq( 0 )" ).css( "color", "hotpink" );
+</script>
+ 
+</body>
+</html>

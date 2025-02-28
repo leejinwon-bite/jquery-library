@@ -1,0 +1,47 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>each demo</title>
+  <style>
+  div {
+    color: red;
+    text-align: center;
+    cursor: pointer;
+    font-weight: bolder;
+    width: 300px;
+  }
+  </style>
+  <script src="https://code.jquery.com/jquery-3.7.1.js"></script>
+</head>
+<body>
+
+    <p>this.style.color = "blue";는 Dom 요소 안에다가 style 속성을 넣는다는 거임.</p>
+    <p> this.style.color = "";는 Dom요소에서 style 속성을 없앴지만, <br>
+        div {<br>
+          color: red;<br>
+          text-align: center;<br>
+          cursor: pointer;<br>
+          font-weight: bolder;<br>
+          width: 300px;<br>
+        }<br>
+        이것의 적용받아서 깜박깜박 거리는 색깔이 됨.</p>
+ 
+<div>Click here</div>
+<div>to iterate through</div>
+<div>these divs.</div>
+ 
+<script>
+$( document.body ).on( "click", function() {
+  $( "div" ).each( function( i ) {
+    if ( this.style.color !== "green" ) {
+      this.style.color = "green";
+    } else {
+      this.style.color = "";
+    }
+  } );
+} );
+</script>
+ 
+</body>
+</html>

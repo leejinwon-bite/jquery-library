@@ -1,0 +1,32 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>event.preventDefault demo</title>
+  <script src="https://code.jquery.com/jquery-3.7.1.js"></script>
+</head>
+<body>
+    <h2>event.preventDefault();는 이벤트 함수외에 다른 링크나 다른 기능이 되지 못하도록 막는 기능임.</h2>
+ 
+<a class="e" href="https://jquery.com">default click action is prevented</a><br><br><br><br><br>
+<div id="log"></div>
+<a class="r" href="https://jquery.com">default click action isn't prevented</a>
+
+ 
+<script>
+$( "a.e" ).on( "click", function( event ) {
+  event.preventDefault();
+  $( "<div>" )
+    .append( "default " + event.type + " prevented" )
+    .appendTo( "#log" );
+});
+
+$( "a.e" ).on( "click", function( event ) {
+  $( "<div>" )
+    .append( "default " + event.type + " prevented" )
+    .appendTo( "#log" );
+});
+</script>
+ 
+</body>
+</html>

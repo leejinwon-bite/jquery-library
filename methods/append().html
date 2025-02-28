@@ -16,14 +16,16 @@
  
 <p>I would like to say: </p>
 <p>I would like to say: </p>
+<strong>$( "p" ).eq(1).append() 에서 append()안에 p태그도 배열에 포함됨</strong>
 <p>I would like to say: </p>
  
 <script>
 // append()는 앞의 선택자 바로 오른쪽 옆에 새로운 태그를 집어넣는 기능을 가진 애다. 
-// 혹은 이미 <body>에 적혀있는 요소를 멀리 떨어져 있어도 바로 아래쪽에 붙여 버린다.   
+// 혹은 이미 <body>에 적혀있는 요소를 멀리 떨어져 있어도 바로 아래쪽에 붙여 버린다.
+//  >>>>오른쪽 or 아래쪽에 붙여버림  
 $( "p" ).eq(0).append( "<strong>Hello</strong>" );
-$( "p" ).eq(1).append( "hi" );
-$("p").eq(2).append($("h1"));
+$( "p" ).eq(1).append( "hi", "<p>hi2</p>", "hi3", "<h2>yayayay</h2>" );
+$("p").eq(3).append($("<h1>hello</h1>"));
 
 
 </script>

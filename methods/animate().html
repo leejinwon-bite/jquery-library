@@ -7,10 +7,10 @@
     <script>
         $(document).ready(function(){
             $('#btn1').click(function(){
-                $("#box").animate({height:"300px"});
+                $("#box").animate({height:"300px"},8000);
             });
             $('#btn2').click(function(){
-                $("#box").animate({height:"30px"});
+                $("#box").animate({height:"30px"},7000);
             });
         });
     </script>
@@ -32,6 +32,9 @@
     </style>
 </head>
 <body>
+
+    <p>$("#box").animate({height:"300px"},8000);의 8000은 <span>당신의 소세지가 커지는 시간</span></p>
+
     <button id="btn1">long</button>
     <button id="btn2">small</button>
     <div id="box"></div>
