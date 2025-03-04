@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+    <script>
+        const getPromise1 = (seconds) => new Promise((resolve,
+         reject) => {
+
+            setTimeout(()=> {
+                console.log("getPromise1 실행 완료");
+            }, seconds * 1000);
+            
+         });
+
+         getPromise1(3).then((pro) => {
+            console.log("promise1의 반환값 pro : "+pro);
+         }).catch((pro) => {
+            console.log("promise1의 반환값 pro : "+pro);
+         });
+
+         console.log("resolve가 실행성공시 promise를 반환, reject가 실행 실패시 promise를 반환");
+         console.log("resolve, reject 안 사용하면 .then, .catch안됨.");
+         console.log(">>>>>> custom promise 함수,"
+          +" callback함수를 만들 수 있다.");
+          
+         const getPromise2 = (seconds) => new Promise((resolve,
+         reject) => {
+
+                let math = Math.ceil(seconds);
+                resolve("나는 Promise의 return 값+math: "+math);
+                console.log("getPromise2 실행 완료");
+         });
+
+         getPromise2(4).then((pro) => {
+            console.log("getPromise2의 반환값 pro: "+pro);
+         }).catch((pro) => {
+            console.log("getPromise2의 반환값 pro: "+pro);
+         });
+
+         const getPromise3 = (seconds) => new Promise((resolve,
+         rejecterfk) => {
+
+            setTimeout(()=> {
+                rejecterfk("Promise의 실행 실패");
+                console.log("getPromise3 실행 실패");
+            }, seconds * 1000);
+            
+         });
+
+         getPromise3(6).then((pro) => {
+            console.log("getPromise3의 반환값 pro: "+pro);
+         }).catch((pro) => {
+            console.log("getPromise3 실행 실패 pro: "+pro);
+         });
+
+         
+         
+    </script>
+    
+</body>
+</html>
