@@ -2,27 +2,24 @@
 <html lang="en">
 <head>
   <meta charset="utf-8">
-  <title>remove demo</title>
+  <title>empty demo</title>
   <style>
   p {
     background: yellow;
-    margin: 6px 0;
   }
   </style>
   <script src="https://code.jquery.com/jquery-3.7.1.js"></script>
 </head>
 <body>
  
-<p class="hello">Hello</p>
-how are
-<p>you?</p>
-<button>Call remove( ":contains('Hello')" ) on paragraphs</button>
+<p>Hello, <span>wild lifes</span> <em>and person</em>.</p>
+ 
+<button>Call empty() on above paragraph</button>
  
 <script>
 $( "button" ).on( "click", function() {
-    // 태그 자체를 지우는 함수.
-  $( "p" ).remove( ":contains('Hello')" );
-});
+  $( "p" ).empty();
+} );
 </script>
  
 </body>

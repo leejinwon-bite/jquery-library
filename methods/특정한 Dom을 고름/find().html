@@ -9,11 +9,14 @@
 <body>
 
 <p><span>Hello</span>, how are you?</p>
-<p>Me? I'm <span>good</span>.</p>
+<p>Me? I'm <span>good</span>.......</p>
+<p>beming <span class="be">models</span> are beautiful</p>
  
 <!-- 앞 선택자의 특정 자식을 고르는 선택자 함수 -->
 <script>
     $( "p" ).find( "span" ).css( "color", "red" );
+    $( "p" ).find( "span[class='be']" ).css( "color", "purple" );
+
 </script>
  
 </body>

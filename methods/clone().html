@@ -1,0 +1,21 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>clone demo</title>
+  <script src="https://code.jquery.com/jquery-3.7.1.js"></script>
+</head>
+<body>
+ 
+<b>Hello</b> <p2> i'm good</p2>
+<p>, how are you?</p>
+
+<h4>clone()은 Dom을 복사한다.</h4>
+ 
+<script>
+$( "b" ).clone().prependTo( "p" );
+$( "p2" ).clone().appendTo( "p" );
+</script>
+ 
+</body>
+</html>

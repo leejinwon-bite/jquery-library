@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://code.jquery.com/jquery-3.7.1.js"></script>
+</head>
+<body>
+
+    <div class="first-cover">
+        <ul class="second-cover">
+          <li class="third-cover">
+            <div class="last-el">event</div>
+          </li>
+        </ul>
+      </div>
+
+      <p>e.stopPropagation()을 안쓰면 이벤트 적용이 상위 Dom 요소까지 전달되어 나타난다.</p>
+      <p>단지 .last-el 만 클릭했을 뿐, alert()가 여러번 나온다.</p>
+      <p>아래는 event.stopPropagation()을 쓴 사례임. alert()가 한번만 나온다. 부모 요소로 전달 X</p>
+
+      <div class="first-cover2">
+        <ul class="second-cover2">
+          <li class="third-cover2">
+            <div class="last-el2">event2</div>
+          </li>
+        </ul>
+      </div>
+    
+      <script>
+
+        $(".last-el").click(function(){
+	    alert("last-el");
+        });
+        $(".third-cover").click(function(){
+        alert("third-cover");
+        });
+        $(".second-cover").click(function(){
+            alert("second-cover");
+        });
+        $(".first-cover").click(function(){
+            alert("first-cover");
+        });
+
+        $(".last-el2").click(function(){
+
+            event.stopPropagation();
+
+	    alert("last-el2");
+        });
+        $(".third-cover2").click(function(){
+        alert("third-cover2");
+        });
+        $(".second-cover2").click(function(){
+            alert("second-cover2");
+        });
+        $(".first-cover2").click(function(){
+            alert("first-cover2");
+        });
+
+      </script>
+</body>
+</html>
